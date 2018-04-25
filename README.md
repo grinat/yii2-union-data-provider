@@ -17,6 +17,20 @@ or add
 
 to the require section of your `composer.json` file.
 
+or
+
+```
+php /usr/bin/composer require --prefer-dist grinat/yii2-union-data-provider
+```
+
+or
+
+```
+php your_composer_path require --prefer-dist grinat/yii2-union-data-provider
+```
+
+
+
 
 Usage
 ------------
