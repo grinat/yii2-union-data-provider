@@ -1,0 +1,31 @@
+{
+  "name": "grinat/yii2-union-data-provider",
+  "version": "0.1.0",
+  "description": "Data provider which joins different tables via union",
+  "keywords": [
+    "yii2",
+    "data provider",
+    "union"
+  ],
+  "support": {
+    "issues": "https://github.com/grinat/yii2-union-data-provider/issues",
+    "source": "https://github.com/grinat/yii2-union-data-provider",
+    "docs": "https://github.com/grinat/yii2-union-data-provider#README"
+  },
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gabdrashitov Rinat",
+      "email": "paladin2012gnu@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "grinat\\uniondataprovider\\": "src"
+    }
+  }
+}
