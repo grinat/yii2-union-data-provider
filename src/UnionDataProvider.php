@@ -45,16 +45,19 @@ class UnionDataProvider extends ActiveDataProvider { /*extends BaseDataProvider 
      *            [
      *               'class' => 'app\modules\coach\models\CoachDietComment',
      *               'selectAs' => ['diet_id' => 'relationColumn'],
+     *               //'where' => ['>','diet_id',5], //Yii2 activequery where style
      *               'withRel' => ['createdUser', 'relationColumn' => 'diet']
      *            ],
      *            [
      *                'class' => 'app\modules\coach\models\CoachDietReview',
      *                'selectAs' => ['diet_id' => 'relationColumn'],
+     *               //'where' => ['diet_id'=>20], //Yii2 activequery where style     
      *                'withRel' => ['createdUser', 'relationColumn' => 'diet']
      *            ],
      *            [
      *                'class' => 'app\modules\coach\models\CoachReview',
      *                'selectAs' => ['coach_id' => 'relationColumn'],
+     *               //'where' => ['or',['coach_id'=>20],['coach_id'=>50]], //Yii2 activequery where style     
      *                'withRel' => ['createdUser', 'relationColumn' => 'coach.createdUser']
      *            ]
      *        ]
@@ -113,6 +116,12 @@ class UnionDataProvider extends ActiveDataProvider { /*extends BaseDataProvider 
             /* @var $model \yii\db\ActiveRecord */
             $model = new $option['class'];
             $q = $model::find()->select($columns);
+            
+            
+            if(!empty($option['where'])){
+                $q->andWhere($option['where']);
+            }
+            
             if($mainQ === null){
                 $mainQ = $q;
             } else {
